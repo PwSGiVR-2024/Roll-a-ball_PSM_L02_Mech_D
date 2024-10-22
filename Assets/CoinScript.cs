@@ -22,7 +22,7 @@ public class CoinScript : MonoBehaviour
 
     void OnTriggerEnter(Collider collider)
     {
-        collider.gameObject.GetComponent<MoveController>().score = +1;
+        //collider.gameObject.GetComponent<MoveController>().score = +1;
         print("Zdoby³eœ punkt !");
         //Object.Destroy(gameObject);
         gameObject.GetComponentInParent<CoinCounter>().count();
