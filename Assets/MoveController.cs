@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MoveController : MonoBehaviour
 {
-    Rigidbody m_Rigidbody;
+    public Rigidbody m_Rigidbody;
     public int score = 0;
     public bool touchesGround;
     //float forceX = 0, forceZ = 0;
