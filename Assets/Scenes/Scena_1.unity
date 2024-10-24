@@ -1181,6 +1181,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5180490017193966409, guid: ad43e0fdcff28124c91425338c61f0d7, type: 3}
+      propertyPath: force
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 5180490017193966409, guid: ad43e0fdcff28124c91425338c61f0d7, type: 3}
+      propertyPath: touchesGround
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5180490017193966409, guid: ad43e0fdcff28124c91425338c61f0d7, type: 3}
+      propertyPath: moveAction.m_Name
+      value: Move
+      objectReference: {fileID: 0}
     - target: {fileID: 6277920254956905302, guid: ad43e0fdcff28124c91425338c61f0d7, type: 3}
       propertyPath: m_Name
       value: Player

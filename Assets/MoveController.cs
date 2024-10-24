@@ -1,47 +1,42 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class MoveController : MonoBehaviour
 {
     public Rigidbody m_Rigidbody;
-    public int score = 0;
     public bool touchesGround;
-    //float forceX = 0, forceZ = 0;
-    float force = 0.1F;
     float additionalGravity = 2;
+
+    public int score = 0;
+
+    InputAction moveAction;
+    public float force = 10;
+    private Vector3 move;
+
+    InputAction jumpAction;
     float jumpForce = 3F;
-    // Start is called before the first frame update
+
+
     void Start()
     {
+        moveAction = InputSystem.actions.FindAction("Move");
+        jumpAction = InputSystem.actions.FindAction("Jump");
         m_Rigidbody = GetComponent<Rigidbody>();
     }
 
-    // Update is called once per frame
     void FixedUpdate()
     {
         m_Rigidbody.AddForce(0, -additionalGravity, 0, ForceMode.Force);
-        if (Input.GetKey(KeyCode.W))
+
+        if (moveAction.IsPressed())
         {
-            //forceZ = 1;
-            m_Rigidbody.AddForce(0, 0, force, ForceMode.Impulse);
+            move = moveAction.ReadValue<Vector2>();
+            m_Rigidbody.AddForce(move.x*force*Time.deltaTime, 0, move.y * force * Time.deltaTime, ForceMode.Impulse);
         }
-        if (Input.GetKey(KeyCode.S))
-        {
-            //forceZ = -1;
-            m_Rigidbody.AddForce(0, 0, -force, ForceMode.Impulse);
-        }
-        if (Input.GetKey(KeyCode.D))
-        {
-            //forceX= 1;
-            m_Rigidbody.AddForce(force, 0, 0, ForceMode.Impulse);
-        }
-        if (Input.GetKey(KeyCode.A))
-        {
-            //forceX = -1;
-            m_Rigidbody.AddForce(-force, 0, 0, ForceMode.Impulse);
-        }
-        if (Input.GetKey(KeyCode.Space))
+        if (jumpAction.IsPressed())
         {
             jump();
         }
