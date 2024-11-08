@@ -167,6 +167,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0c7b628508c58b4b880c667e1d6f023, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  onCoinCollection:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!54 &19661956
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -401,8 +404,6 @@ GameObject:
   - component: {fileID: 95598306}
   - component: {fileID: 95598305}
   - component: {fileID: 95598304}
-  - component: {fileID: 95598303}
-  - component: {fileID: 95598308}
   m_Layer: 0
   m_Name: tile (1)
   m_TagString: Untagged
@@ -410,18 +411,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &95598303
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 95598302}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f1fb36cb6b66a0844a1ba9f1f689d063, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!64 &95598304
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -512,18 +501,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
---- !u!114 &95598308
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 95598302}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f1fb36cb6b66a0844a1ba9f1f689d063, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &260747762
 GameObject:
   m_ObjectHideFlags: 0
@@ -536,8 +513,6 @@ GameObject:
   - component: {fileID: 260747766}
   - component: {fileID: 260747765}
   - component: {fileID: 260747764}
-  - component: {fileID: 260747763}
-  - component: {fileID: 260747768}
   m_Layer: 0
   m_Name: tile (2)
   m_TagString: Untagged
@@ -545,18 +520,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &260747763
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 260747762}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f1fb36cb6b66a0844a1ba9f1f689d063, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!64 &260747764
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -647,18 +610,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0.5, z: 0}
---- !u!114 &260747768
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 260747762}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f1fb36cb6b66a0844a1ba9f1f689d063, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &303772125
 GameObject:
   m_ObjectHideFlags: 0
@@ -671,8 +622,6 @@ GameObject:
   - component: {fileID: 303772130}
   - component: {fileID: 303772129}
   - component: {fileID: 303772128}
-  - component: {fileID: 303772127}
-  - component: {fileID: 303772126}
   m_Layer: 0
   m_Name: tile (4)
   m_TagString: Untagged
@@ -680,30 +629,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &303772126
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 303772125}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f1fb36cb6b66a0844a1ba9f1f689d063, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &303772127
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 303772125}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f1fb36cb6b66a0844a1ba9f1f689d063, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!64 &303772128
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -806,8 +731,6 @@ GameObject:
   - component: {fileID: 344682704}
   - component: {fileID: 344682703}
   - component: {fileID: 344682702}
-  - component: {fileID: 344682701}
-  - component: {fileID: 344682706}
   m_Layer: 0
   m_Name: tile (3)
   m_TagString: Untagged
@@ -815,18 +738,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &344682701
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 344682700}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f1fb36cb6b66a0844a1ba9f1f689d063, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!64 &344682702
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -917,18 +828,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
---- !u!114 &344682706
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 344682700}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f1fb36cb6b66a0844a1ba9f1f689d063, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &510389689
 GameObject:
   m_ObjectHideFlags: 0
@@ -1523,8 +1422,6 @@ GameObject:
   - component: {fileID: 833095133}
   - component: {fileID: 833095132}
   - component: {fileID: 833095131}
-  - component: {fileID: 833095130}
-  - component: {fileID: 833095129}
   m_Layer: 0
   m_Name: tile (5)
   m_TagString: Untagged
@@ -1532,30 +1429,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &833095129
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 833095128}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f1fb36cb6b66a0844a1ba9f1f689d063, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &833095130
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 833095128}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f1fb36cb6b66a0844a1ba9f1f689d063, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!64 &833095131
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -1694,6 +1567,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0c7b628508c58b4b880c667e1d6f023, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  onCoinCollection:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!54 &930418387
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1914,7 +1790,6 @@ GameObject:
   - component: {fileID: 1023299405}
   - component: {fileID: 1023299404}
   - component: {fileID: 1023299403}
-  - component: {fileID: 1023299402}
   m_Layer: 0
   m_Name: Ground (1)
   m_TagString: Untagged
@@ -1922,18 +1797,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1023299402
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1023299401}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f1fb36cb6b66a0844a1ba9f1f689d063, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!64 &1023299403
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -2036,8 +1899,6 @@ GameObject:
   - component: {fileID: 1075801471}
   - component: {fileID: 1075801470}
   - component: {fileID: 1075801469}
-  - component: {fileID: 1075801468}
-  - component: {fileID: 1075801473}
   m_Layer: 0
   m_Name: tile
   m_TagString: Untagged
@@ -2045,18 +1906,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1075801468
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1075801467}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f1fb36cb6b66a0844a1ba9f1f689d063, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!64 &1075801469
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -2147,18 +1996,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0.5, z: 0}
---- !u!114 &1075801473
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1075801467}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f1fb36cb6b66a0844a1ba9f1f689d063, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1139105378
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2431,7 +2268,6 @@ GameObject:
   - component: {fileID: 1263543272}
   - component: {fileID: 1263543271}
   - component: {fileID: 1263543270}
-  - component: {fileID: 1263543269}
   m_Layer: 0
   m_Name: Ground (2)
   m_TagString: Untagged
@@ -2439,18 +2275,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1263543269
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1263543268}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f1fb36cb6b66a0844a1ba9f1f689d063, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!64 &1263543270
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -2589,6 +2413,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0c7b628508c58b4b880c667e1d6f023, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  onCoinCollection:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!54 &1273926083
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3048,6 +2875,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0c7b628508c58b4b880c667e1d6f023, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  onCoinCollection:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!54 &1526924556
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3282,7 +3112,6 @@ GameObject:
   - component: {fileID: 1609064565}
   - component: {fileID: 1609064564}
   - component: {fileID: 1609064563}
-  - component: {fileID: 1609064567}
   m_Layer: 0
   m_Name: Ground
   m_TagString: Untagged
@@ -3380,18 +3209,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0.5, z: 0}
---- !u!114 &1609064567
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1609064562}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f1fb36cb6b66a0844a1ba9f1f689d063, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1613098991
 GameObject:
   m_ObjectHideFlags: 0
@@ -3693,6 +3510,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0c7b628508c58b4b880c667e1d6f023, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  onCoinCollection:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!54 &1862258759
 Rigidbody:
   m_ObjectHideFlags: 0
