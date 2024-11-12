@@ -7,12 +7,12 @@ using UnityEngine.Events;
 
 public class CoinScript : MonoBehaviour
 {
-    Rigidbody m_rigidbody;
+    Rigidbody _Rigidbody;
     public UnityEvent onCoinCollection;
 
     void Start()
     {
-        m_rigidbody = GetComponent<Rigidbody>();
+        _Rigidbody = GetComponent<Rigidbody>();
     }
 
     void Update()

@@ -14,30 +14,30 @@ public class Pause_menu : MonoBehaviour
             PauseMenu.SetActive(true);
         }
     }
-    public void Main_menu_button()
+    public void MainMenuButton()
     {
         SceneManager.LoadScene(0);
     }
 
-    public void Settings_button()
+    public void SettingsButton()
     {
         SettingsMenu.SetActive(true);
         PauseMenu.SetActive(false);
     }
 
-    public void Quit_settings()
+    public void QuitSettings()
     {
         PauseMenu.SetActive(true);
         SettingsMenu.SetActive(false);
     }
 
-    public void Resume_button()
+    public void ResumeButton()
     {
         Time.timeScale = 1;
         PauseMenu.SetActive(false);
     }
 
-    public void Quit_button()
+    public void QuitButton()
     {
         Application.Quit();
     }
