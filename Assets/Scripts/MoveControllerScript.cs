@@ -14,6 +14,7 @@ public class MoveController : MonoBehaviour
     InputAction JumpAction;
 
     private Vector3 _Move;
+    private Vector3 _SpawnPoint;
 
     void Start()
     {
@@ -26,12 +27,15 @@ public class MoveController : MonoBehaviour
 
         // events
         WallsScript.e_WallCollision += WallCollision;
+        SpawnPointScript.e_SetSpawn += SetSpawnPoint;
+        _SpawnPoint = new Vector3(0, 0.5f, 0);
     }
 
     private void OnDestroy()
     {
         // this fixes error on scene change
         WallsScript.e_WallCollision -= WallCollision;
+        SpawnPointScript.e_SetSpawn -= SetSpawnPoint;
     }
 
     void FixedUpdate()
@@ -59,7 +63,12 @@ public class MoveController : MonoBehaviour
 
     public void WallCollision(object obj, EventArgs e)
     {
-        gameObject.transform.SetPositionAndRotation(new Vector3(0,0.5f,0), Quaternion.Euler(0, 0, 0));
+        gameObject.transform.SetPositionAndRotation(_SpawnPoint, Quaternion.Euler(0, 0, 0));
+    }
+
+    public void SetSpawnPoint(object obj, Vector3 spawnPoint)
+    {
+        _SpawnPoint  = spawnPoint;
     }
 
     public bool TouchesGround()

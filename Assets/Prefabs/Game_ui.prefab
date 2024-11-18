@@ -123,7 +123,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1176833179851575802}
         m_TargetAssemblyTypeName: Pause_menu, Assembly-CSharp
-        m_MethodName: Quit_settings
+        m_MethodName: QuitSettings
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -520,7 +520,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1176833179851575802}
         m_TargetAssemblyTypeName: Pause_menu, Assembly-CSharp
-        m_MethodName: Quit_button
+        m_MethodName: QuitButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -732,7 +732,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1176833179851575802}
         m_TargetAssemblyTypeName: Pause_menu, Assembly-CSharp
-        m_MethodName: Resume_button
+        m_MethodName: ResumeButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1213,7 +1213,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1176833179851575802}
         m_TargetAssemblyTypeName: Pause_menu, Assembly-CSharp
-        m_MethodName: Main_menu_button
+        m_MethodName: MainMenuButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1346,7 +1346,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1176833179851575802}
         m_TargetAssemblyTypeName: Pause_menu, Assembly-CSharp
-        m_MethodName: Settings_button
+        m_MethodName: SettingsButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
