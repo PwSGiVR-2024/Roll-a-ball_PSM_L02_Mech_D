@@ -36,7 +36,7 @@ Material:
     - _Shininess: 0.039
     m_Colors:
     - _Color: {r: 0.93962264, g: 0.6499501, b: 0.03368445, a: 1}
-    - _SpecColor: {r: 0.78113204, g: 0.6234318, b: 0.6234318, a: 1}
+    - _SpecColor: {r: 0.83396226, g: 0.6422679, b: 0.18095396, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
 --- !u!1002 &2100001

@@ -516,7 +516,7 @@ Light:
   m_Enabled: 1
   serializedVersion: 11
   m_Type: 1
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.99018735, g: 1, b: 0.6094339, a: 1}
   m_Intensity: 1
   m_Range: 10
   m_SpotAngle: 30
@@ -579,13 +579,147 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 705507993}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.6963643, y: 0.122787796, z: -0.122787796, w: 0.6963643}
-  m_LocalPosition: {x: 0, y: 4, z: 0}
+  m_LocalRotation: {x: 0.9274267, y: 0.096945696, z: 0.15041342, w: 0.328416}
+  m_LocalPosition: {x: 0, y: 4, z: -0.25}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 90, y: 40, z: 20}
+  m_LocalEulerAnglesHint: {x: 144.549, y: -24.876007, z: -20}
+--- !u!1 &711410998
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 711411000}
+  - component: {fileID: 711410999}
+  m_Layer: 0
+  m_Name: Light probes
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!220 &711410999
+LightProbeGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 711410998}
+  m_Enabled: 1
+  m_SourcePositions:
+  - {x: -6.75, y: 1, z: -0.75}
+  - {x: -16.5, y: 1, z: -4.5}
+  - {x: -6.75, y: -1, z: -0.75}
+  - {x: -16.5, y: -1, z: -4.5}
+  - {x: -18.5, y: 1, z: 8.5}
+  - {x: -18.5, y: 1, z: -4.5}
+  - {x: -18.5, y: -1, z: 8.5}
+  - {x: -18.5, y: -1, z: -4.5}
+  - {x: -6.75, y: 1, z: -0.75}
+  - {x: -6.75, y: -1, z: -0.75}
+  - {x: -18.5, y: 1, z: 8.5}
+  - {x: -16.5, y: 1, z: 10.25}
+  - {x: -16.5, y: -1, z: 10.25}
+  - {x: -18.5, y: 1, z: 10.25}
+  - {x: -18.5, y: -1, z: 10.25}
+  - {x: -16.5, y: 1, z: 10.25}
+  - {x: -16.5, y: -1, z: 10.25}
+  - {x: -18.5, y: 1, z: 10.25}
+  - {x: -16.5, y: 1, z: -7.75}
+  - {x: -16.5, y: -1, z: -7.75}
+  - {x: -18.5, y: 1, z: -7.75}
+  - {x: -18.5, y: -1, z: -7.75}
+  - {x: -0.75, y: 1, z: 8.5}
+  - {x: -0.75, y: 1, z: -4.5}
+  - {x: -0.75, y: -1, z: 8.5}
+  - {x: -0.75, y: -1, z: -4.5}
+  - {x: -2.75, y: 1, z: 8.5}
+  - {x: -2.75, y: 1, z: -4.5}
+  - {x: -2.75, y: -1, z: 8.5}
+  - {x: -2.75, y: -1, z: -4.5}
+  - {x: -0.75, y: 1, z: 8.5}
+  - {x: -0.75, y: -1, z: 8.5}
+  - {x: -2.75, y: 1, z: 8.5}
+  - {x: -0.75, y: 1, z: 10.25}
+  - {x: -0.75, y: -1, z: 10.25}
+  - {x: -2.75, y: 1, z: 10.25}
+  - {x: -2.75, y: -1, z: 10.25}
+  - {x: -0.75, y: 1, z: 10.25}
+  - {x: -0.75, y: -1, z: 10.25}
+  - {x: -2.75, y: 1, z: 10.25}
+  - {x: -0.75, y: 1, z: -7.75}
+  - {x: -0.75, y: -1, z: -7.75}
+  - {x: -2.75, y: 1, z: -7.75}
+  - {x: -2.75, y: -1, z: -7.75}
+  - {x: -16.5, y: 1, z: 8.5}
+  - {x: -16.5, y: -1, z: 8.5}
+  - {x: -16.5, y: 1, z: 8.5}
+  - {x: -16.5, y: -1, z: 8.5}
+  - {x: -15.5, y: 1, z: 6.25}
+  - {x: -15.5, y: -1, z: 6.25}
+  - {x: -15.5, y: 1, z: 6.25}
+  - {x: -15.5, y: -1, z: 6.25}
+  - {x: -15.5, y: 1, z: -2.5}
+  - {x: -15.5, y: -1, z: -2.5}
+  - {x: -15.5, y: 1, z: -2.5}
+  - {x: -15.5, y: -1, z: -2.5}
+  - {x: -4.5, y: 1, z: -2.5}
+  - {x: -4.5, y: -1, z: -2.5}
+  - {x: -4.5, y: 1, z: -2.5}
+  - {x: -4.5, y: -1, z: -2.5}
+  - {x: -4.5, y: 1, z: 6}
+  - {x: -4.5, y: -1, z: 6}
+  - {x: -4.5, y: 1, z: 6}
+  - {x: -4.5, y: -1, z: 6}
+  - {x: -6.75, y: 1, z: 3.5}
+  - {x: -6.75, y: -1, z: 3.5}
+  - {x: -6.75, y: 1, z: 3.5}
+  - {x: -6.75, y: -1, z: 3.5}
+  - {x: -12.5, y: 1, z: 3.5}
+  - {x: -12.5, y: -1, z: 3.5}
+  - {x: -12.5, y: 1, z: 3.5}
+  - {x: -12.5, y: -1, z: 3.5}
+  - {x: -9.75, y: 1, z: -5.75}
+  - {x: -9.75, y: -1, z: -5.75}
+  - {x: -9.75, y: 1, z: -5.75}
+  - {x: -9.75, y: -1, z: -5.75}
+  - {x: -12.5, y: 1, z: -1.25}
+  - {x: -12.5, y: -1, z: -1.25}
+  - {x: -12.5, y: 1, z: -1.25}
+  - {x: -12.5, y: -1, z: -1.25}
+  - {x: -2.75, y: 1, z: 1.25}
+  - {x: -2.75, y: -1, z: 1.25}
+  - {x: -2.75, y: 1, z: 1.25}
+  - {x: -2.75, y: -1, z: 1.25}
+  - {x: -9.75, y: 1, z: 8.5}
+  - {x: -9.75, y: -1, z: 8.5}
+  - {x: -9.75, y: 1, z: 8.5}
+  - {x: -9.75, y: -1, z: 8.5}
+  - {x: -16.5, y: 1, z: 1.25}
+  - {x: -16.5, y: -1, z: 1.25}
+  - {x: -16.5, y: 1, z: 1.25}
+  - {x: -16.5, y: -1, z: 1.25}
+  m_Dering: 0
+--- !u!4 &711411000
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 711410998}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 9.5, y: 1, z: -1.25}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &835742066
 GameObject:
   m_ObjectHideFlags: 0
@@ -2109,7 +2243,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4807560472999246651, guid: ad43e0fdcff28124c91425338c61f0d7, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4807560472999246651, guid: ad43e0fdcff28124c91425338c61f0d7, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2440,3 +2574,4 @@ SceneRoots:
   - {fileID: 1504305819}
   - {fileID: 1293144654}
   - {fileID: 1408988009457669697}
+  - {fileID: 711411000}
