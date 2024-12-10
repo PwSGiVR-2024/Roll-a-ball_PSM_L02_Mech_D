@@ -2,8 +2,8 @@ using UnityEngine;
 
 public class ElevatorScript : MonoBehaviour
 {
-    public int _PathToTravel = 10;
-    public float _Speed = 3f;
+    public int PathToTravel = 10;
+    public float speed = 3f;
     private float _InitialHight;
     private bool _GoUp;
     private float _TargetHeight;
@@ -12,7 +12,7 @@ public class ElevatorScript : MonoBehaviour
     void Start()
     {
         _InitialHight = transform.position.y;
-        _TargetHeight = _InitialHight + _PathToTravel;
+        _TargetHeight = _InitialHight + PathToTravel;
     }
 
     // Update is called once per frame
@@ -22,7 +22,7 @@ public class ElevatorScript : MonoBehaviour
         {
             return;
         }
-        transform.position += new Vector3(0, _Speed * Time.deltaTime, 0);
+        transform.position += new Vector3(0, speed * Time.deltaTime, 0);
     }
 
     private void OnCollisionEnter(Collision collision)

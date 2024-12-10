@@ -8,19 +8,19 @@ public class MoveController : MonoBehaviour
     public Rigidbody Rigidbody;
     public float JumpForce = 2f;
     public float Force = 10;
-
-    float AdditionalGravity = 2;
-    InputAction MoveAction;
-    InputAction JumpAction;
-
+    public float AdditionalGravity = 2;
+    
+    
+    private InputAction _MoveAction;
+    private InputAction _JumpAction;
     private Vector3 _Move;
     private Vector3 _SpawnPoint;
 
     void Start()
     {
         // actions
-        MoveAction = InputSystem.actions.FindAction("Move");
-        JumpAction = InputSystem.actions.FindAction("Jump");
+        _MoveAction = InputSystem.actions.FindAction("Move");
+        _JumpAction = InputSystem.actions.FindAction("Jump");
 
         // variable assigment
         Rigidbody = GetComponent<Rigidbody>();
@@ -42,12 +42,12 @@ public class MoveController : MonoBehaviour
     {
         Rigidbody.AddForce(0, -AdditionalGravity, 0, ForceMode.Force);
 
-        if (MoveAction.IsPressed())
+        if (_MoveAction.IsPressed())
         {
-            _Move = MoveAction.ReadValue<Vector2>();
+            _Move = _MoveAction.ReadValue<Vector2>();
             Rigidbody.AddForce(_Move.x * Force * Time.deltaTime, 0, _Move.y * Force * Time.deltaTime, ForceMode.Impulse);
         }
-        if (JumpAction.IsPressed())
+        if (_JumpAction.IsPressed())
         {
             Jump();
         }

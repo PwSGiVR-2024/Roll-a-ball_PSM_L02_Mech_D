@@ -7,8 +7,9 @@ using UnityEngine.Events;
 
 public class CoinScript : MonoBehaviour
 {
-    Rigidbody _Rigidbody;
     public UnityEvent onCoinCollection;
+
+    private Rigidbody _Rigidbody;
 
     void Start()
     {
