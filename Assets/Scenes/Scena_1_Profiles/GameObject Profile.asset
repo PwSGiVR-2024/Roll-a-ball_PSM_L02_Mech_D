@@ -18,10 +18,10 @@ MonoBehaviour:
     value: 1
   mode:
     overrideState: 1
-    value: 1
+    value: 0
   intensity:
     overrideState: 1
-    value: 0.89
+    value: 1.03
   color:
     overrideState: 0
     value: {r: 0, g: 0, b: 0, a: 1}
@@ -39,16 +39,16 @@ MonoBehaviour:
     value: -12
   thicknessModifier:
     overrideState: 0
-    value: 1
+    value: 1.22
   zBias:
     overrideState: 0
-    value: 0.0001
+    value: 0.000133
   directLightingStrength:
     overrideState: 0
     value: 0
   radius:
-    overrideState: 0
-    value: 0.25
+    overrideState: 1
+    value: 10
   quality:
     overrideState: 0
     value: 2
@@ -75,23 +75,23 @@ MonoBehaviour:
     overrideState: 1
     value: 0.8
   softKnee:
-    overrideState: 0
-    value: 0.5
+    overrideState: 1
+    value: 0.315
   clamp:
     overrideState: 0
     value: 65472
   diffusion:
-    overrideState: 0
-    value: 7
+    overrideState: 1
+    value: 4.04
   anamorphicRatio:
-    overrideState: 0
-    value: 0
+    overrideState: 1
+    value: 0.01
   color:
-    overrideState: 0
-    value: {r: 1, g: 1, b: 1, a: 1}
+    overrideState: 1
+    value: {r: 0.8705506, g: 0.8705506, b: 0.8705506, a: 1}
   fastMode:
-    overrideState: 0
-    value: 0
+    overrideState: 1
+    value: 1
   dirtTexture:
     overrideState: 0
     value: {fileID: 0}
@@ -157,23 +157,23 @@ MonoBehaviour:
     overrideState: 0
     value: 0
   colorFilter:
-    overrideState: 0
-    value: {r: 1, g: 1, b: 1, a: 1}
+    overrideState: 1
+    value: {r: 0.7125086, g: 0.8156863, b: 0.7607843, a: 1}
   hueShift:
     overrideState: 0
-    value: 0
+    value: 2
   saturation:
-    overrideState: 0
-    value: 0
+    overrideState: 1
+    value: -36
   brightness:
     overrideState: 0
     value: 0
   postExposure:
-    overrideState: 0
-    value: 0
+    overrideState: 1
+    value: 2
   contrast:
-    overrideState: 0
-    value: 0
+    overrideState: 1
+    value: 31
   mixerRedOutRedIn:
     overrideState: 0
     value: 100
@@ -202,14 +202,14 @@ MonoBehaviour:
     overrideState: 0
     value: 100
   lift:
-    overrideState: 0
-    value: {x: 1, y: 1, z: 1, w: 0}
+    overrideState: 1
+    value: {x: 0.96420145, y: 1, z: 0.8989398, w: -0.017652256}
   gamma:
-    overrideState: 0
-    value: {x: 1, y: 1, z: 1, w: 0}
+    overrideState: 1
+    value: {x: 1, y: 1, z: 1, w: 0.10591351}
   gain:
-    overrideState: 0
-    value: {x: 1, y: 1, z: 1, w: 0}
+    overrideState: 1
+    value: {x: 1, y: 1, z: 1, w: 0.98852617}
   masterCurve:
     overrideState: 0
     value:
