@@ -33,10 +33,10 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _Shininess: 0.339
+    - _Shininess: 0.05
     m_Colors:
-    - _Color: {r: 0.93962264, g: 0.6499501, b: 0.03368445, a: 1}
-    - _SpecColor: {r: 0.83396226, g: 0.6422679, b: 0.18095396, a: 1}
+    - _Color: {r: 1, g: 0.879719, b: 0.6245283, a: 1}
+    - _SpecColor: {r: 0.76640934, g: 1, b: 0.60188675, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
 --- !u!1002 &2100001

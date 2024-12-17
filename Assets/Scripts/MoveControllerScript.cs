@@ -1,4 +1,5 @@
 using System;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -61,9 +62,9 @@ public class MoveController : MonoBehaviour
         }
     }
 
-    public void WallCollision(object obj, EventArgs e)
+    public void WallCollision(object obj, GameObject go)
     {
-        gameObject.transform.SetPositionAndRotation(_SpawnPoint, Quaternion.Euler(0, 0, 0));
+        gameObject.transform.SetPositionAndRotation(_SpawnPoint, Quaternion.Euler(-90, 0, 0));
     }
 
     public void SetSpawnPoint(object obj, Vector3 spawnPoint)
