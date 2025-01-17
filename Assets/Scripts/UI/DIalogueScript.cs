@@ -23,7 +23,10 @@ public class DIalogueScript : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        e_DialogueStart?.Invoke(this, (TextToDisplay, SetCheckpoint, transform.position, AnimationId));
-        gameObject.SetActive(false);
+        if (other.tag == "Player")
+        {
+            e_DialogueStart?.Invoke(this, (TextToDisplay, SetCheckpoint, transform.position, AnimationId));
+            gameObject.SetActive(false);
+        }
     }
 }

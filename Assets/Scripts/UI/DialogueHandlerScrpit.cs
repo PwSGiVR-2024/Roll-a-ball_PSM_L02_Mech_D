@@ -8,7 +8,7 @@ public class DialogueHandlerScrpit : MonoBehaviour
     public GameObject DialogueObject;
     public GameObject Player;
     public float DialogueBoxShowTime = 7f;
-    public float TextSpeed = 0.01f;
+    public float TextSpeed = 0.07f;
 
     private Text _dialogueText;
 
@@ -28,6 +28,8 @@ public class DialogueHandlerScrpit : MonoBehaviour
 
     public void CreateDialogue(object sender, (string, bool, Vector3, int) dialogueData)
     {
+        print(sender.ToString());
+
         string textToDisplay = dialogueData.Item1;
         bool setCheckpoint = dialogueData.Item2;
         Vector3 checkpointPosition = dialogueData.Item3;
