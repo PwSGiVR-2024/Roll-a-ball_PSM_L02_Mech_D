@@ -1119,7 +1119,7 @@ GameObject:
   - component: {fileID: 47923320}
   - component: {fileID: 47923319}
   m_Layer: 0
-  m_Name: Capsule (1)
+  m_Name: After_lasers
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2104,56 +2104,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fa49e460baf435b4780da7196c2ab473, type: 3}
---- !u!1 &108700161
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 108700163}
-  - component: {fileID: 108700162}
-  m_Layer: 0
-  m_Name: StartDialogue
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &108700162
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 108700161}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 522ffcdc0fbad424a869ff1260a2a7bd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  TextToDisplay: "Witaj \u017Co\u0142nie\u017Cu, ciesz\u0119 si\u0119 \u017Ce znalaz\u0142e\u015B
-    spos\xF3b by uciec | Twoj\u0105 nast\u0119pn\u0105 misj\u0105 jest przedrze\u0107
-    si\u0119przez te pole asteroid by dosta\u0107 si\u0119 do statku"
-  FireOnStartup: 1
-  SetCheckpoint: 0
-  AnimationId: 0
---- !u!4 &108700163
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 108700161}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 23.595102, y: -27.505373, z: -8.777773}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &109856293
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4754,6 +4704,58 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5557281570777717123, guid: b97c6b33d4f765247b0954deaf6b5f38, type: 3}
   m_PrefabInstance: {fileID: 8408373189647869033}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &337812196
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 337812198}
+  - component: {fileID: 337812197}
+  m_Layer: 5
+  m_Name: DialogueHandler
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &337812197
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 337812196}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23f8c946f168a824caed6911f63ef6c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DialogueObject: {fileID: 2058327521}
+  Player: {fileID: 1849796716}
+  DialogueBoxShowTime: 7
+  TextSpeed: 0.05
+--- !u!224 &337812198
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 337812196}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -486.74997}
+  m_LocalScale: {x: 1.2535, y: 1.2535, z: 1.2535}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 501.39996, y: 548.1}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &345080115
 GameObject:
   m_ObjectHideFlags: 0
@@ -7056,7 +7058,7 @@ GameObject:
   - component: {fileID: 550597089}
   - component: {fileID: 550597088}
   m_Layer: 0
-  m_Name: Capsule (3)
+  m_Name: Before_boss
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7750,9 +7752,25 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3729963410569081388, guid: 33f991132746361438d5c4116c724145, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3894218686570443006, guid: 33f991132746361438d5c4116c724145, type: 3}
       propertyPath: m_Name
       value: Game_ui
+      objectReference: {fileID: 0}
+    - target: {fileID: 3910368726736941127, guid: 33f991132746361438d5c4116c724145, type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 3910368726736941127, guid: 33f991132746361438d5c4116c724145, type: 3}
+      propertyPath: m_FontData.m_Alignment
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5035664943299155313, guid: 33f991132746361438d5c4116c724145, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.9143486
       objectReference: {fileID: 0}
     - target: {fileID: 5044585543702545032, guid: 33f991132746361438d5c4116c724145, type: 3}
       propertyPath: m_LocalPosition.x
@@ -7792,6 +7810,38 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5044585543702545032, guid: 33f991132746361438d5c4116c724145, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6516307696563191283, guid: 33f991132746361438d5c4116c724145, type: 3}
+      propertyPath: m_Pivot.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6516307696563191283, guid: 33f991132746361438d5c4116c724145, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6516307696563191283, guid: 33f991132746361438d5c4116c724145, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6516307696563191283, guid: 33f991132746361438d5c4116c724145, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0.000061035156
+      objectReference: {fileID: 0}
+    - target: {fileID: 8914208898626228537, guid: 33f991132746361438d5c4116c724145, type: 3}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 1849796716}
+    - target: {fileID: 8914208898626228537, guid: 33f991132746361438d5c4116c724145, type: 3}
+      propertyPath: DialogueObject
+      value: 
+      objectReference: {fileID: 2058327521}
+    - target: {fileID: 9149173245407363800, guid: 33f991132746361438d5c4116c724145, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -246.54456
+      objectReference: {fileID: 0}
+    - target: {fileID: 9149173245407363800, guid: 33f991132746361438d5c4116c724145, type: 3}
+      propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -11610,8 +11660,9 @@ GameObject:
   - component: {fileID: 915281263}
   - component: {fileID: 915281262}
   - component: {fileID: 915281261}
+  - component: {fileID: 915281264}
   m_Layer: 0
-  m_Name: Capsule
+  m_Name: After_asteroids
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11708,6 +11759,23 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 915281259}
   m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &915281264
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 915281259}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 522ffcdc0fbad424a869ff1260a2a7bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TextToDisplay: Oh no! The enemy has formed a paramiter of floating turrets before
+    thier base! You need to destroy them all! Use "SPACE" to shoot!
+  FireOnStartup: 0
+  SetCheckpoint: 1
+  AnimationId: 0
 --- !u!1001 &916979097
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15840,7 +15908,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1381489771
 Transform:
   m_ObjectHideFlags: 0
@@ -15854,6 +15922,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1812638526}
   - {fileID: 915281260}
   - {fileID: 47923318}
   - {fileID: 1690192036}
@@ -18584,7 +18653,7 @@ GameObject:
   - component: {fileID: 1690192038}
   - component: {fileID: 1690192037}
   m_Layer: 0
-  m_Name: Capsule (2)
+  m_Name: After_containers
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -20278,6 +20347,134 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fa49e460baf435b4780da7196c2ab473, type: 3}
+--- !u!1 &1812638525
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1812638526}
+  - component: {fileID: 1812638530}
+  - component: {fileID: 1812638529}
+  - component: {fileID: 1812638528}
+  - component: {fileID: 1812638527}
+  m_Layer: 0
+  m_Name: Starting_dialogue
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1812638526
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1812638525}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.0015693671, y: 0.0015693671, z: 0.7071051, w: 0.7071051}
+  m_LocalPosition: {x: 23.736128, y: -23.1, z: -182.4}
+  m_LocalScale: {x: 50, y: 50, z: 50}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1381489771}
+  m_LocalEulerAnglesHint: {x: 0, y: 0.2543311, z: 90}
+--- !u!114 &1812638527
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1812638525}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 522ffcdc0fbad424a869ff1260a2a7bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TextToDisplay: You need to get through this asteroid field, before getting on that
+    ship! Your front lights will help you!
+  FireOnStartup: 1
+  SetCheckpoint: 0
+  AnimationId: 0
+--- !u!136 &1812638528
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1812638525}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!23 &1812638529
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1812638525}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: a3369093376a06940807958972b8079b, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &1812638530
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1812638525}
+  m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!4 &1814629029 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 446090, guid: 84cc3cd234dfc9d4d9d2e92c0eb0af75, type: 3}
@@ -22616,6 +22813,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fa49e460baf435b4780da7196c2ab473, type: 3}
+--- !u!1 &2058327521 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3729963410569081388, guid: 33f991132746361438d5c4116c724145, type: 3}
+  m_PrefabInstance: {fileID: 584906527}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2059700338
 GameObject:
   m_ObjectHideFlags: 0
@@ -23966,9 +24168,9 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 1858783236}
-  - {fileID: 108700163}
   - {fileID: 584906527}
   - {fileID: 223481812}
+  - {fileID: 337812198}
   - {fileID: 1381489771}
   - {fileID: 1108817103}
   - {fileID: 1948205946}

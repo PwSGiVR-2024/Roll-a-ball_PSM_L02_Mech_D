@@ -5,7 +5,7 @@ public class DIalogueScript : MonoBehaviour
 {
 
     // after creating a checkpoint, the gameObject is set to inactive
-    public static event EventHandler<(string, bool, int)> e_DialogueStart;
+    public static event EventHandler<(string, bool, Vector3, int)> e_DialogueStart;
 
     public string TextToDisplay = "";
     public bool FireOnStartup;
@@ -16,14 +16,14 @@ public class DIalogueScript : MonoBehaviour
     {
         if(FireOnStartup)
         {
-            e_DialogueStart?.Invoke(this, (TextToDisplay, SetCheckpoint, AnimationId));
+            e_DialogueStart?.Invoke(this, (TextToDisplay, SetCheckpoint, transform.position, AnimationId));
             gameObject.SetActive(false);
         }
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        e_DialogueStart?.Invoke(this, (TextToDisplay, SetCheckpoint, AnimationId));
+        e_DialogueStart?.Invoke(this, (TextToDisplay, SetCheckpoint, transform.position, AnimationId));
         gameObject.SetActive(false);
     }
 }
