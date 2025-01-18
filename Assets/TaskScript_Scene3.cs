@@ -1,3 +1,4 @@
+using NUnit.Framework;
 using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -18,8 +19,7 @@ public class TaskScript_Scene3 : MonoBehaviour
 
     public GameObject Turrets;
     public GameObject Buttons;
-    [SerializeField]
-    private string[] taskText =
+    private string[] taskText = new string[6]
     {
         "Get through asteroid field! ",
         "Destroy all the defending turrets! ",
@@ -32,7 +32,7 @@ public class TaskScript_Scene3 : MonoBehaviour
 
     void Start()
     {
-        //DIalogueScript.e_ChangeTask += OnNewTask;
+        DIalogueScript.e_ChangeTask += OnNewTask;
     }
 
     private void Update()
@@ -40,12 +40,20 @@ public class TaskScript_Scene3 : MonoBehaviour
         switch (_taskId)
         {
             case 1:
+                print("1");
                 TaskProgress.text = "Turrets left: " + Turrets.transform.childCount.ToString();
-                e_TaskComplete(this, _taskId);
+                if (Turrets.transform.childCount == 0){
+                    e_TaskComplete?.Invoke(this, _taskId+1);
+                    OnNewTask(null, _taskId + 1);
+                }
                 break;
             case 4:
                 TaskProgress.text = "Buttons left: " + Buttons.transform.childCount.ToString();
-                e_TaskComplete(this, _taskId);
+                if (Buttons.transform.childCount == 0)
+                {
+                    e_TaskComplete?.Invoke(this, _taskId+1);
+                    OnNewTask(null, _taskId + 1);
+                }
                 break;
             case 6: // fired after explosion of boss
                 SceneManager.LoadScene(SceneManager.sceneCount-1);
@@ -59,5 +67,7 @@ public class TaskScript_Scene3 : MonoBehaviour
     private void OnNewTask(object sender, int id)
     {
         CurrentTask.text = taskText[id];
+        TaskProgress.text = "";
+        _taskId = id;
     }
 }

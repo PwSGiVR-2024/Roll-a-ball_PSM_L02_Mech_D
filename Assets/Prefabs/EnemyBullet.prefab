@@ -253,7 +253,7 @@ MonoBehaviour:
   TargetTag: Player
   OwnerTag: Enemy
   Speed: 4
-  TimeToLive: 10
+  TimeToLive: 30
   Damage: 1
 --- !u!54 &869077841619212470
 Rigidbody:

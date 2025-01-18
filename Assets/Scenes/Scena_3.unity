@@ -581,6 +581,17 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 14196337}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &16852668 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5374338904553499286, guid: 33f991132746361438d5c4116c724145, type: 3}
+  m_PrefabInstance: {fileID: 584906527}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &18049990
 GameObject:
   m_ObjectHideFlags: 0
@@ -1234,6 +1245,7 @@ MonoBehaviour:
   FireOnStartup: 0
   SetCheckpoint: 1
   AnimationId: 0
+  TaksId: 3
 --- !u!1001 &49910296
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7230,6 +7242,7 @@ MonoBehaviour:
   FireOnStartup: 0
   SetCheckpoint: 1
   AnimationId: 0
+  TaksId: 5
 --- !u!4 &555997339 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7420649576629430255, guid: f19128d52967e8948b676dbb6803edca, type: 3}
@@ -11899,6 +11912,7 @@ MonoBehaviour:
   FireOnStartup: 0
   SetCheckpoint: 1
   AnimationId: 0
+  TaksId: 1
 --- !u!1001 &916979097
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13267,6 +13281,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1088541032}
+  - component: {fileID: 1088541033}
   m_Layer: 0
   m_Name: LaserWalls
   m_TagString: Untagged
@@ -13294,6 +13309,20 @@ Transform:
   - {fileID: 1803115787}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1088541033
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1088541031}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0dfb6607724d1d8458d0ee20e5a93759, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TaskId: 2
+  SwitchTime: 5
 --- !u!1001 &1095973491
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16582,11 +16611,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4743be5ae79190a43a4e14a2cb622714, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CurrentTask: {fileID: 0}
-  TaskProgress: {fileID: 0}
-  Turrets: {fileID: 0}
+  CurrentTask: {fileID: 16852668}
+  TaskProgress: {fileID: 1479689751}
+  Turrets: {fileID: 2022040769}
   Buttons: {fileID: 0}
-  taskText: []
 --- !u!4 &1418696271
 Transform:
   m_ObjectHideFlags: 0
@@ -17165,6 +17193,17 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1477516527}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1479689751 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3127618003437933171, guid: 33f991132746361438d5c4116c724145, type: 3}
+  m_PrefabInstance: {fileID: 584906527}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1481721647 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 446090, guid: 84cc3cd234dfc9d4d9d2e92c0eb0af75, type: 3}
@@ -19071,6 +19110,7 @@ MonoBehaviour:
   FireOnStartup: 0
   SetCheckpoint: 0
   AnimationId: 1
+  TaksId: 4
 --- !u!4 &1697296747 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7420649576629430255, guid: f19128d52967e8948b676dbb6803edca, type: 3}
@@ -20720,6 +20760,7 @@ MonoBehaviour:
   FireOnStartup: 1
   SetCheckpoint: 0
   AnimationId: 0
+  TaksId: 0
 --- !u!136 &1812638528
 CapsuleCollider:
   m_ObjectHideFlags: 0

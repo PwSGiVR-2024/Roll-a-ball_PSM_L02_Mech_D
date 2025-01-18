@@ -31,7 +31,6 @@ public class HpHandlerScript : MonoBehaviour
 
     protected virtual void OnTriggerEnter(Collider other)
     {
-        print("Hit, "+gameObject.tag);
         if (other.gameObject.tag == "Bullet" && other.gameObject.GetComponent<BulletScript>().TargetTag == gameObject.tag)
         {
             RemoveHp(other.gameObject.GetComponent<BulletScript>().Damage);
