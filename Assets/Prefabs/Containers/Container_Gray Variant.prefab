@@ -52,6 +52,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Container_Gray Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 5724270241594873879, guid: 3c031969d4ac981488836ebe34d19415, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7753080625071711403, guid: 3c031969d4ac981488836ebe34d19415, type: 3}
+      propertyPath: m_CastShadows
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7753080625071711403, guid: 3c031969d4ac981488836ebe34d19415, type: 3}
+      propertyPath: m_LightProbeUsage
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7753080625071711403, guid: 3c031969d4ac981488836ebe34d19415, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
