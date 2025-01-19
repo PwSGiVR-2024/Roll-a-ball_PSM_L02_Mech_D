@@ -1,0 +1,53 @@
+burning helipad
+- helipad on screen
+- after coming close fire event
+- player blinks
+- communication that helipad is burning
+- visible ship burns
+- buttons destruction event fire
+
+buttons
+- 2 buttons that task manager keeps count of
+- if buttons.children = 0: open gates using translate
+
+boss
+- after coming into room, silent checkpoint
+- he shoots 1 static pattern
+- 2 towers on him that shoot at you with bigger and faster bullets (purple)
+- 1 frontal beam attack if player in trigger for 4 s
+-- the beam is communicated firstly by semi - transparent cilinder
+- could add more but no time
+- after defeat explodes
+- and after that it fires event no. 6
+
+boss ui
+- add hp bar for boss
+
+player ui
+- add hp count
+
+player sfx
+- in movecontroller classic add function that on wall collision plays explosion, then after 0.5 s teleports to checkpoint
+- in movecontroller ship attach one to 0 hp state (just run the function form classic)
+
+Add better button textures
+
+burn lightmap into scene 3
+
+better ending screen
+
+dialogues on startup in scene 1 and 2
+
+remove checkpoint from scene 2 and the script, use empty dialoguebox as checkpoint
+
+better next level text
+
+task test more visible (maybe add a canvas sector semi-transparent black)
+
+FINAL CODE REFRACTOR
+
+FINAL FOLDER REFRACTOR
+
+FINAL PLAYTEST
+
+BUILD
