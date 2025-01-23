@@ -9,13 +9,13 @@ public class DoorOpenerScript : MonoBehaviour
     public GameObject DoorDown;
     public GameObject DoorUp;
 
-    public int OpenTaskId = 4;
-    public int CloseTaskId = 5;
+    public int OpenTaskId = 6;
+    public int CloseTaskId = 7;
 
     /// when player enters boss area and reaches the checkpoint
     /// and it is fals, it closes the doors after 5s so player doesn't escape
     private bool _opened = false; 
-    private bool _startChanging = true;
+    private bool _startChanging = false;
     private Vector3 _doorDownStartPos;
     private Vector3 _doorUpStartPos;
 
@@ -26,12 +26,11 @@ public class DoorOpenerScript : MonoBehaviour
         _doorUpStartPos = DoorUp.transform.position;
     }
 
-    // Update is called once per frame
     void Update()
     {
         if(_startChanging && !_opened)
         {
-            if (DoorDown.transform.position.y < _doorDownStartPos.y - MaxRange)
+            if (DoorDown.transform.position.y > _doorDownStartPos.y - MaxRange)
             {
                 DoorDown.transform.Translate(Vector3.down * Speed);
                 DoorUp.transform.Translate(Vector3.up * Speed);
@@ -39,12 +38,13 @@ public class DoorOpenerScript : MonoBehaviour
             else
             {
                 _startChanging = false;
+                _opened = true;
             }
             
         }
         else if (_startChanging && _opened)
         {
-            if(DoorDown.transform.position.y < _doorDownStartPos.y - MaxRange)
+            if(DoorDown.transform.position.y < _doorDownStartPos.y + MaxRange)
             {
                 DoorDown.transform.Translate(Vector3.up * Speed);
                 DoorUp.transform.Translate(Vector3.down * Speed);
@@ -56,9 +56,12 @@ public class DoorOpenerScript : MonoBehaviour
         }
     }
 
-    private void ChangeState(object o, int taskId)
+    public void ChangeState(object o, int taskId)
     {
         print(taskId);
-        _startChanging = !_startChanging;
+        if (taskId == OpenTaskId || taskId == CloseTaskId)
+        {
+            _startChanging = !_startChanging;
+        }
     }
 }

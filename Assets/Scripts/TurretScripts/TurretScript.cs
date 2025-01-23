@@ -44,7 +44,6 @@ public class TurretScript : MonoBehaviour
 
         GameObject bullet = Instantiate(BulletPrefab, new Vector3(transform.position.x, 0, transform.position.z), _desiredRotation);
         bullet.GetComponent<BulletScript>().OwnerTag = this.gameObject.tag;
-        print("Turret firing");
     }
 
     void CalculateDesiredRotation()

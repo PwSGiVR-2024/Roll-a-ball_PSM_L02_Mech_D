@@ -20469,7 +20469,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &833489359
 Transform:
   m_ObjectHideFlags: 0
@@ -31264,7 +31264,7 @@ Transform:
   m_GameObject: {fileID: 1381489770}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -24.736126, y: 19.25, z: 138.18394}
+  m_LocalPosition: {x: -24.736126, y: 19.25, z: 148.15282}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -46899,8 +46899,8 @@ MonoBehaviour:
   MaxRange: 11
   DoorDown: {fileID: 204006492}
   DoorUp: {fileID: 1259014965}
-  OpenTaskId: 4
-  CloseTaskId: 5
+  OpenTaskId: 6
+  CloseTaskId: 7
 --- !u!1 &2139746761
 GameObject:
   m_ObjectHideFlags: 0

@@ -28,8 +28,6 @@ public class DialogueHandlerScrpit : MonoBehaviour
 
     public void CreateDialogue(object sender, (string, bool, Vector3, int) dialogueData)
     {
-        print(sender.ToString());
-
         string textToDisplay = dialogueData.Item1;
         bool setCheckpoint = dialogueData.Item2;
         Vector3 checkpointPosition = dialogueData.Item3;

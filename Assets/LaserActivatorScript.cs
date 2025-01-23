@@ -7,13 +7,14 @@ public class LaserActivatorScript : MonoBehaviour
 
     private bool _start;
     private float _lastActivationTime = 0;
-    private int _inactiveLaser = 0;
+    private int _inactiveLaser;
     private int _childrenNumber;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         TaskScript_Scene3.e_TaskComplete += OnLaserStart;
         _childrenNumber = gameObject.transform.childCount;
+        _inactiveLaser = _childrenNumber - 2; // so the lasers will be in efficient time for player to go in at first attempt
     }
 
     // Update is called once per frame

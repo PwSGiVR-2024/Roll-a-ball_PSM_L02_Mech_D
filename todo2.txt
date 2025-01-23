@@ -4,11 +4,12 @@ burning helipad
 - communication that helipad is burning
 - visible ship burns
 
-buttons
-- buttons work but id is wrong, correct it
+boss lighting
+
+fix gaps in ship floor
+- also update so first laser gets down first
 
 boss
-- after coming into room, silent checkpoint
 - he shoots 1 static pattern
 - 2 towers on him that shoot at you with bigger and faster bullets (purple)
 - 1 frontal beam attack if player in trigger for 4 s

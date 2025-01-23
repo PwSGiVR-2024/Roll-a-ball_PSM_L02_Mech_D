@@ -1,5 +1,6 @@
 using NUnit.Framework;
 using System;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -30,6 +31,7 @@ public class TaskScript_Scene3 : MonoBehaviour
         "Defeat the BOSS! ",
     };
     private int _taskId = 0;
+    private bool _doors = false;
 
     void Start()
     {
@@ -51,12 +53,21 @@ public class TaskScript_Scene3 : MonoBehaviour
             case 5:
                 Buttons.SetActive(true); // they don't exist before so palyer can't skip
                 TaskProgress.text = "Buttons left: " + Buttons.transform.childCount.ToString();
-                if (Buttons.transform.childCount == 0)
+                if (Buttons.transform.childCount == 0 && !_doors)
                 {
                     e_TaskComplete?.Invoke(this, _taskId+1);
-                    OnNewTask(null, _taskId + 1);
+                    _doors = true;
                 }
                 break;
+                case 6:
+                if (_doors)
+                {
+                    e_TaskComplete(this, _taskId + 1);
+                    _doors = false;
+                }
+                    
+                    break;
+
             case 7: // fired after explosion of boss
                 SceneManager.LoadScene(SceneManager.sceneCount-1);
                 break;
