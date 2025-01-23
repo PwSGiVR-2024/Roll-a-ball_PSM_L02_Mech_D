@@ -19,12 +19,13 @@ public class TaskScript_Scene3 : MonoBehaviour
 
     public GameObject Turrets;
     public GameObject Buttons;
-    private string[] taskText = new string[6]
+    private string[] taskText = new string[7]
     {
         "Get through asteroid field! ",
         "Destroy all the defending turrets! ",
         "Get through the laser field! ",
         "Get through the hangar! ",
+        "Reach helipad! ",
         "Destroy the datacenter transmitters! ", // made up thing
         "Defeat the BOSS! ",
     };
@@ -47,7 +48,8 @@ public class TaskScript_Scene3 : MonoBehaviour
                     OnNewTask(null, _taskId + 1);
                 }
                 break;
-            case 4:
+            case 5:
+                Buttons.SetActive(true); // they don't exist before so palyer can't skip
                 TaskProgress.text = "Buttons left: " + Buttons.transform.childCount.ToString();
                 if (Buttons.transform.childCount == 0)
                 {
@@ -55,7 +57,7 @@ public class TaskScript_Scene3 : MonoBehaviour
                     OnNewTask(null, _taskId + 1);
                 }
                 break;
-            case 6: // fired after explosion of boss
+            case 7: // fired after explosion of boss
                 SceneManager.LoadScene(SceneManager.sceneCount-1);
                 break;
             default:

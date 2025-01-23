@@ -1,14 +1,11 @@
 burning helipad
-- helipad on screen
 - after coming close fire event
 - player blinks
 - communication that helipad is burning
 - visible ship burns
-- buttons destruction event fire
 
 buttons
-- 2 buttons that task manager keeps count of
-- if buttons.children = 0: open gates using translate
+- buttons work but id is wrong, correct it
 
 boss
 - after coming into room, silent checkpoint
