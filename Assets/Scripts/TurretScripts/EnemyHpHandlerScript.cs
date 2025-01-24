@@ -41,14 +41,21 @@ public class EnemyHpHandlerScript : HpHandlerScript
 
     private void DisableTurret()
     {
-        var turretScript = GetComponent<TurretScript>();
-        if (turretScript != null)
+        if (GetComponent<TurretScript>() != null)
         {
+            var turretScript = GetComponent<TurretScript>();
             turretScript.enabled = false;
         }
 
-        GetComponent<BoxCollider>().enabled = false; // so they don't block shots on death
-        GetComponent<CapsuleCollider>().enabled = false; // so they don't block shots on death
+        if (GetComponent<CapsuleCollider>() != null)
+        {
+            GetComponent<CapsuleCollider>().enabled = false;
+        }
+
+        if (GetComponent<BoxCollider>() != null)
+        {
+            GetComponent<BoxCollider>().enabled = false;
+        }
 
         GetComponent<MeshRenderer>().enabled = false;
         MeshRenderer[] meshRenderers = GetComponentsInChildren<MeshRenderer>();
