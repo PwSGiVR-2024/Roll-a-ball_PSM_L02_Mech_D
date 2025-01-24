@@ -36,6 +36,10 @@ public class BossScript : TurretScript
 
     protected override void Update()
     {
+        if (!_playerDetected)
+        {
+            return;
+        }
         if (Time.time > _lastFired + FireRate) // fast purple pattern
         {
             FirePattern();

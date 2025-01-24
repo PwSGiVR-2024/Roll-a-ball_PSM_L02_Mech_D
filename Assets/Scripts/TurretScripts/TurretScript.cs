@@ -9,9 +9,10 @@ public class TurretScript : MonoBehaviour
     public Transform Player;
     public float RandomFireDelay = 0.5f;
 
-    private bool _playerDetected = false;
-    protected float _lastFired; //change to private
     private Quaternion _desiredRotation;
+
+    protected bool _playerDetected = false;
+    protected float _lastFired;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()

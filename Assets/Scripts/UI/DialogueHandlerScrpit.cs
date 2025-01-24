@@ -26,12 +26,11 @@ public class DialogueHandlerScrpit : MonoBehaviour
     }
 
 
-    public void CreateDialogue(object sender, (string, bool, Vector3, int) dialogueData)
+    public void CreateDialogue(object sender, (string, bool, Vector3) dialogueData)
     {
         string textToDisplay = dialogueData.Item1;
         bool setCheckpoint = dialogueData.Item2;
         Vector3 checkpointPosition = dialogueData.Item3;
-        int animationId = dialogueData.Item4;
 
         Vector3 offScreenPosition = new Vector3(DialogueObject.transform.position.x, -600f, DialogueObject.transform.position.z);
         DialogueObject.transform.position = offScreenPosition;
@@ -49,11 +48,6 @@ public class DialogueHandlerScrpit : MonoBehaviour
             // I do this this way to not fire too many events, for spawnpoints to function, player must also so it's not a problem
             // also i get the player y, becouse the checkpoints can have different sizes ect
             Player.GetComponent<MoveController>().SetSpawnPoint(null, new Vector3(checkpointPosition.x, Player.transform.position.y, checkpointPosition.z));
-        }
-
-        if (animationId != 0)
-        {
-            // animation fire logic
         }
     }
 

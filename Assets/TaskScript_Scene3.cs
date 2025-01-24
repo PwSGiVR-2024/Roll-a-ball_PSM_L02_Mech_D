@@ -21,6 +21,7 @@ public class TaskScript_Scene3 : MonoBehaviour
 
     public GameObject Turrets;
     public GameObject Buttons;
+
     private string[] taskText = new string[8]
     {
         "Get through asteroid field! ",
@@ -89,6 +90,6 @@ public class TaskScript_Scene3 : MonoBehaviour
     private IEnumerator BossDefeatSequence()
     {
         yield return new WaitForSeconds(5f);
-        SceneManager.LoadScene(SceneManager.sceneCount - 1);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 }

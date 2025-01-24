@@ -5,7 +5,10 @@ public class DIalogueScript : MonoBehaviour
 {
 
     // after creating a checkpoint, the gameObject is set to inactive
-    public static event EventHandler<(string, bool, Vector3, int)> e_DialogueStart;
+    public static event EventHandler<(string, bool, Vector3)> e_DialogueStart;
+    public static event EventHandler<int> e_AnimationStart;
+
+
     public static event EventHandler<int> e_ChangeTask;
 
     public string TextToDisplay = "";
@@ -18,8 +21,9 @@ public class DIalogueScript : MonoBehaviour
     {
         if(FireOnStartup)
         {
-            e_DialogueStart?.Invoke(this, (TextToDisplay, SetCheckpoint, transform.position, AnimationId));
+            e_DialogueStart?.Invoke(this, (TextToDisplay, SetCheckpoint, transform.position));
             e_ChangeTask?.Invoke(this, TaksId);
+            e_AnimationStart?.Invoke(this, AnimationId);
             gameObject.SetActive(false);
         }
     }
@@ -28,9 +32,9 @@ public class DIalogueScript : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            e_DialogueStart?.Invoke(this, (TextToDisplay, SetCheckpoint, transform.position, AnimationId));
+            e_DialogueStart?.Invoke(this, (TextToDisplay, SetCheckpoint, transform.position));
             e_ChangeTask?.Invoke(this, TaksId);
-
+            e_AnimationStart?.Invoke(this, AnimationId);
             gameObject.SetActive(false);
         }
     }

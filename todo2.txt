@@ -1,15 +1,3 @@
-burning helipad
-- after coming close fire event
-- player blinks
-- communication that helipad is burning
-- visible ship burns
-
-Typo in 3rd to last checkpoint
-
-boss
-- after defeat explodes
-- and after that it fires event no. 7
-
 boss ui
 - add hp bar for boss
 
