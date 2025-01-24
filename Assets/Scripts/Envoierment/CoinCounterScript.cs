@@ -8,8 +8,8 @@ public class CoinCounter : MonoBehaviour
     public GameObject FinishText;
 
     private AudioSource _audioSource;
-    private bool _GameEnd;
-    private int _TotalCoins;
+    private bool _gameEnd;
+    private int _totalCoins;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,14 +20,14 @@ public class CoinCounter : MonoBehaviour
         }
 
         _audioSource = GetComponent<AudioSource>();
-        _TotalCoins = gameObject.transform.childCount;
-        ScoreText.text = "0\\" + _TotalCoins.ToString();
+        _totalCoins = gameObject.transform.childCount;
+        ScoreText.text = "0\\" + _totalCoins.ToString();
     }
 
     // Update is called once per frame
     void Update()
     {
-       if (_GameEnd && Input.GetKey(KeyCode.Space)){
+       if (_gameEnd && Input.GetKey(KeyCode.Space)){
             int currentScene = SceneManager.GetActiveScene().buildIndex;
             if (DoesSceneExist(currentScene + 1))
             {
@@ -56,14 +56,14 @@ public class CoinCounter : MonoBehaviour
 
         if (activeCoins == 1)
         {
-            ScoreText.text = _TotalCoins.ToString() + "\\" + _TotalCoins.ToString();
+            ScoreText.text = _totalCoins.ToString() + "\\" + _totalCoins.ToString();
             FinishText.SetActive(true);
             print("You collected all the coins");
-            _GameEnd = true;
+            _gameEnd = true;
         }
         else
         {
-            ScoreText.text = (_TotalCoins - activeCoins+1).ToString() + "\\" + _TotalCoins.ToString();
+            ScoreText.text = (_totalCoins - activeCoins+1).ToString() + "\\" + _totalCoins.ToString();
             print("You have " + (activeCoins-1) + "coins to collect");
         }
     }

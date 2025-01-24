@@ -2127,6 +2127,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2285899861431292331, guid: 020549f29eb275c46a73ff9b72dab9b0, type: 3}
+      propertyPath: ForceNewInstance
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4869563480812402784, guid: 020549f29eb275c46a73ff9b72dab9b0, type: 3}
       propertyPath: m_Name
       value: Music_object
@@ -2378,6 +2382,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5180490017193966409, guid: ad43e0fdcff28124c91425338c61f0d7, type: 3}
+      propertyPath: JumpClip
+      value: 
+      objectReference: {fileID: 8300000, guid: bd3e9db5e4cb08a4599292397e9c9086, type: 3}
     - target: {fileID: 6277920254956905302, guid: ad43e0fdcff28124c91425338c61f0d7, type: 3}
       propertyPath: m_Name
       value: Player

@@ -13,14 +13,20 @@ public class MoveController : MonoBehaviour
     public float AdditionalGravity = 2;
     public GameObject Explosion;
 
+    public AudioClip ExplosionClip;
+    public AudioClip JumpClip1;
+    public AudioClip JumpClip2;
+
     protected Rigidbody _rigidbody;
     protected InputAction _moveActiondy;
     protected InputAction _jumpAction;
     protected Vector3 _move;
     protected Vector3 _spawnPoint;
+    protected AudioSource _audioSource;
 
     private bool _stopMoving = false;
     private Collider _collider;
+    private bool _jumpSound = false;
 
     protected virtual void Start()
     {
@@ -33,7 +39,7 @@ public class MoveController : MonoBehaviour
 
         // events
         WallsScript.e_WallCollision += WallCollision;
-        SpawnPointScript.e_SetSpawn += SetSpawnPoint;
+        DialogueHandlerScrpit.e_SetSpawn += SetSpawnPoint;
         _spawnPoint = new Vector3(0, 0.5f, 0);
 
         if (gameObject.GetComponent<BoxCollider>() != null)
@@ -44,13 +50,15 @@ public class MoveController : MonoBehaviour
         {
             _collider = gameObject.GetComponent<SphereCollider>();
         }
+
+        _audioSource = GetComponent<AudioSource>();
     }
 
     protected virtual void OnDestroy()
     {
         // this fixes error on scene change
         WallsScript.e_WallCollision -= WallCollision;
-        SpawnPointScript.e_SetSpawn -= SetSpawnPoint;
+        DialogueHandlerScrpit.e_SetSpawn -= SetSpawnPoint;
     }
 
     protected virtual void FixedUpdate()
@@ -76,6 +84,9 @@ public class MoveController : MonoBehaviour
     {
         if (TouchesGround())
         {
+            _audioSource.clip = _jumpSound ? JumpClip1: JumpClip2; // just so it isn't repetitive
+            _jumpSound = !_jumpSound;
+            _audioSource.Play();
             _rigidbody.AddForce(0, JumpForce, 0, ForceMode.Impulse);
         }
     }
@@ -92,6 +103,9 @@ public class MoveController : MonoBehaviour
 
         // make explosion in place of player
         Instantiate(Explosion, transform.position, Quaternion.Euler(0, 0, 0));
+
+        _audioSource.clip = ExplosionClip;
+        _audioSource.Play();
 
         // start delayed spawn
         StartCoroutine(DelaySpawn());

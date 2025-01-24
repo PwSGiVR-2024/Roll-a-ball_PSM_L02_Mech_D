@@ -11,7 +11,6 @@ public class HpHandlerScript : MonoBehaviour
     // this field is shared with enemy script, so the boss and the major emenies
     // could have thier Hp bars if needed
     public Slider HpBar;
-
     public float Hp = 10;
 
     private float _initialHp;

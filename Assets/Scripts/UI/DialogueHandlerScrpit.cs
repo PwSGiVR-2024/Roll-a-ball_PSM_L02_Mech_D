@@ -2,9 +2,12 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
 using DG.Tweening;
+using System;
 
 public class DialogueHandlerScrpit : MonoBehaviour
 {
+    public static event EventHandler<Vector3> e_SetSpawn;
+
     public GameObject DialogueObject;
     public GameObject Player;
     public float DialogueBoxShowTime = 7f;
@@ -28,7 +31,6 @@ public class DialogueHandlerScrpit : MonoBehaviour
 
     public void CreateDialogue(object sender, (string, bool, Vector3) dialogueData)
     {
-        print("got)");
         string textToDisplay = dialogueData.Item1;
         bool setCheckpoint = dialogueData.Item2;
         Vector3 checkpointPosition = dialogueData.Item3;
@@ -51,7 +53,7 @@ public class DialogueHandlerScrpit : MonoBehaviour
         {
             // I do this this way to not fire too many events, for spawnpoints to function, player must also so it's not a problem
             // also i get the player y, becouse the checkpoints can have different sizes ect
-            Player.GetComponent<MoveController>().SetSpawnPoint(null, new Vector3(checkpointPosition.x, Player.transform.position.y, checkpointPosition.z));
+            e_SetSpawn?.Invoke(null, new Vector3(checkpointPosition.x, Player.transform.position.y, checkpointPosition.z));
         }
     }
 

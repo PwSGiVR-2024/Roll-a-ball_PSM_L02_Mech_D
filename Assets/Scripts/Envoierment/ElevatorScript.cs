@@ -4,21 +4,21 @@ public class ElevatorScript : MonoBehaviour
 {
     public int PathToTravel = 10;
     public float speed = 3f;
-    private float _InitialHight;
-    private bool _GoUp;
-    private float _TargetHeight;
+    private float _initialHight;
+    private bool _goUp;
+    private float _targetHeight;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        _InitialHight = transform.position.y;
-        _TargetHeight = _InitialHight + PathToTravel;
+        _initialHight = transform.position.y;
+        _targetHeight = _initialHight + PathToTravel;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (!_GoUp || transform.position.y >= _TargetHeight)
+        if (!_goUp || transform.position.y >= _targetHeight)
         {
             return;
         }
@@ -29,7 +29,7 @@ public class ElevatorScript : MonoBehaviour
     {
         if(collision.gameObject.tag == "Player")
         {
-            _GoUp = true;
+            _goUp = true;
         }
     }
 }

@@ -2,9 +2,9 @@ using UnityEngine;
 
 public class CameraFollowScript : MonoBehaviour
 {
+    public MoveController BallController;
 
     private GameObject _ball;
-    public MoveController BallController;
     private Vector3 _CameraPositon;
 
     // Start is called before the first frame update

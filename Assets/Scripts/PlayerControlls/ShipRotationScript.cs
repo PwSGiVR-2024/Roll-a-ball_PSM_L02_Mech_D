@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -7,13 +6,11 @@ public class ShipRotationScript : MonoBehaviour
     public float maxTiltAngle = 30f;
     public float tiltSpeed = 20f;
 
-    private Rigidbody _rb;
     private InputAction _movmentAction; 
     private Quaternion _baseRotation;
 
     void Start()
     {
-        _rb = GetComponent<Rigidbody>();
         _movmentAction = InputSystem.actions.FindAction("Move");
         _baseRotation = transform.rotation;
     }
