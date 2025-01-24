@@ -4,19 +4,11 @@ burning helipad
 - communication that helipad is burning
 - visible ship burns
 
-boss lighting
-
-fix gaps in ship floor
-- also update so first laser gets down first
+Typo in 3rd to last checkpoint
 
 boss
-- he shoots 1 static pattern
-- 2 towers on him that shoot at you with bigger and faster bullets (purple)
-- 1 frontal beam attack if player in trigger for 4 s
--- the beam is communicated firstly by semi - transparent cilinder
-- could add more but no time
 - after defeat explodes
-- and after that it fires event no. 6
+- and after that it fires event no. 7
 
 boss ui
 - add hp bar for boss

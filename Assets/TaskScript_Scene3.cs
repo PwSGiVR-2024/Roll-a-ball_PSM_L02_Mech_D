@@ -4,6 +4,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using System.Collections;
 
 public class TaskScript_Scene3 : MonoBehaviour
 {
@@ -20,7 +21,7 @@ public class TaskScript_Scene3 : MonoBehaviour
 
     public GameObject Turrets;
     public GameObject Buttons;
-    private string[] taskText = new string[7]
+    private string[] taskText = new string[8]
     {
         "Get through asteroid field! ",
         "Destroy all the defending turrets! ",
@@ -29,6 +30,7 @@ public class TaskScript_Scene3 : MonoBehaviour
         "Reach helipad! ",
         "Destroy the datacenter transmitters! ", // made up thing
         "Defeat the BOSS! ",
+        "Congratulation!!",
     };
     private int _taskId = 0;
     private bool _doors = false;
@@ -36,6 +38,7 @@ public class TaskScript_Scene3 : MonoBehaviour
     void Start()
     {
         DIalogueScript.e_ChangeTask += OnNewTask;
+        BossScript.e_BossKilled += OnNewTask;
     }
 
     private void Update()
@@ -43,7 +46,6 @@ public class TaskScript_Scene3 : MonoBehaviour
         switch (_taskId)
         {
             case 1:
-                print("1");
                 TaskProgress.text = "Turrets left: " + Turrets.transform.childCount.ToString();
                 if (Turrets.transform.childCount == 0){
                     e_TaskComplete?.Invoke(this, _taskId+1);
@@ -69,7 +71,7 @@ public class TaskScript_Scene3 : MonoBehaviour
                     break;
 
             case 7: // fired after explosion of boss
-                SceneManager.LoadScene(SceneManager.sceneCount-1);
+                StartCoroutine(BossDefeatSequence());
                 break;
             default:
                 break;
@@ -82,5 +84,11 @@ public class TaskScript_Scene3 : MonoBehaviour
         CurrentTask.text = taskText[id];
         TaskProgress.text = "";
         _taskId = id;
+    }
+
+    private IEnumerator BossDefeatSequence()
+    {
+        yield return new WaitForSeconds(5f);
+        SceneManager.LoadScene(SceneManager.sceneCount - 1);
     }
 }

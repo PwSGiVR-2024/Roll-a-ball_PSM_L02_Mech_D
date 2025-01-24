@@ -10,7 +10,7 @@ public class TurretScript : MonoBehaviour
     public float RandomFireDelay = 0.5f;
 
     private bool _playerDetected = false;
-    private float _lastFired;
+    protected float _lastFired; //change to private
     private Quaternion _desiredRotation;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -23,7 +23,7 @@ public class TurretScript : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    protected virtual void Update()
     {
         if (!_playerDetected)
         {
@@ -38,7 +38,7 @@ public class TurretScript : MonoBehaviour
         }
     }
 
-    private void Fire()
+    protected virtual void Fire()
     {
         CalculateDesiredRotation();
 
