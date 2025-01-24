@@ -1,11 +1,13 @@
 using System;
 using System.Threading;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class BossScript : TurretScript
 {
     public static event EventHandler<int> e_BossKilled;
 
+    public Slider HpBar;
     public GameObject BossBullet;
     public Vector3 rotation;
     public int AngledBulletsCount = 11;
@@ -39,6 +41,12 @@ public class BossScript : TurretScript
         if (!_playerDetected)
         {
             return;
+        }
+        else
+        {
+            // I know I shuldnt do this, but dedline is due today, and I would have to modfy fully how
+            // The player detection is handled to do it cleanly
+            HpBar.gameObject.SetActive(true);
         }
         if (Time.time > _lastFired + FireRate) // fast purple pattern
         {

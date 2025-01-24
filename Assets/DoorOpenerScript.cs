@@ -58,7 +58,6 @@ public class DoorOpenerScript : MonoBehaviour
 
     public void ChangeState(object o, int taskId)
     {
-        print(taskId);
         if (taskId == OpenTaskId || taskId == CloseTaskId)
         {
             _startChanging = !_startChanging;

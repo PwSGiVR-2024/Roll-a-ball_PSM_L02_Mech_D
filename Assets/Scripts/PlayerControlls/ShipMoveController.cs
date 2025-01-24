@@ -16,17 +16,6 @@ public class ShipMoveController : MoveController
         HpHandlerScript.e_HpLost += WallCollision;
     }
 
-    // Update is called once per frame
-    protected override void FixedUpdate()
-    {
-        base.FixedUpdate();
-    }
-
-    protected override void OnDestroy()
-    {
-        base.OnDestroy();
-    }
-
     protected override void Jump()
     {
         if(Time.time > _lastFired + FireRate)

@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -10,12 +11,15 @@ public class MoveController : MonoBehaviour
     public float JumpForce = 2f;
     public float Force = 10;
     public float AdditionalGravity = 2;
+    public GameObject Explosion;
 
     protected Rigidbody _Rigidbody;
     protected InputAction _MoveAction;
     protected InputAction _JumpAction;
     protected Vector3 _Move;
     protected Vector3 _SpawnPoint;
+
+    private bool _stopMoving = false;
 
     protected virtual void Start()
     {
@@ -41,6 +45,10 @@ public class MoveController : MonoBehaviour
 
     protected virtual void FixedUpdate()
     {
+        if (_stopMoving)
+        {
+            return;
+        }
         _Rigidbody.AddForce(0, -AdditionalGravity, 0, ForceMode.Force);
 
         if (_MoveAction.IsPressed())
@@ -64,7 +72,20 @@ public class MoveController : MonoBehaviour
 
     public virtual void WallCollision(object obj, EventArgs e)
     {
-        gameObject.transform.SetPositionAndRotation(_SpawnPoint, Quaternion.Euler(-90, 0, 0));
+        // make player invisible and untargetable
+        gameObject.GetComponent<MeshRenderer>().enabled = false;
+        gameObject.GetComponent<BoxCollider>().enabled = false;
+
+        // make player stop moving on all vectors
+        _stopMoving = true;
+        _Rigidbody.linearVelocity = Vector3.zero; 
+        _Rigidbody.angularVelocity = Vector3.zero;
+
+        // make explosion in place of player
+        Instantiate(Explosion, transform.position, Quaternion.Euler(0, 0, 0));
+
+        // start delayed spawn
+        StartCoroutine(DelaySpawn());
     }
 
     public virtual void SetSpawnPoint(object obj, Vector3 spawnPoint)
@@ -79,5 +100,13 @@ public class MoveController : MonoBehaviour
         return Physics.Raycast(transform.position, Vector3.down, 0.6f);
     }
 
-    
+    private IEnumerator DelaySpawn()
+    {
+        yield return new WaitForSeconds(2f);
+        
+        gameObject.transform.SetPositionAndRotation(_SpawnPoint, Quaternion.Euler(-90, 0, 0)); 
+        gameObject.GetComponent<MeshRenderer>().enabled = true;
+        gameObject.GetComponent<BoxCollider>().enabled = true;
+        _stopMoving = false;
+    }
 }

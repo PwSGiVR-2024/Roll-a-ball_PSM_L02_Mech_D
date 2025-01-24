@@ -1,13 +1,3 @@
-boss ui
-- add hp bar for boss
-
-player ui
-- add hp count
-
-player sfx
-- in movecontroller classic add function that on wall collision plays explosion, then after 0.5 s teleports to checkpoint
-- in movecontroller ship attach one to 0 hp state (just run the function form classic)
-
 Add better button textures
 
 burn lightmap into scene 3

@@ -1,10 +1,16 @@
 using System;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
 public class HpHandlerScript : MonoBehaviour
 {
+
     public static event EventHandler e_HpLost;
+
+    // this field is shared with enemy script, so the boss and the major emenies
+    // could have thier Hp bars if needed
+    public Slider HpBar;
 
     public float Hp = 10;
 
@@ -17,10 +23,12 @@ public class HpHandlerScript : MonoBehaviour
 
     protected virtual void Update()
     {
+        HpBar.value = Hp;
         if (Hp <= 0)
         {
             Hp = _initialHp;
             e_HpLost?.Invoke(this, EventArgs.Empty);
+            HpBar.value = Hp;
         }
     }
 
