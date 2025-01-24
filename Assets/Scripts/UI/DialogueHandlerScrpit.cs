@@ -28,21 +28,25 @@ public class DialogueHandlerScrpit : MonoBehaviour
 
     public void CreateDialogue(object sender, (string, bool, Vector3) dialogueData)
     {
+        print("got)");
         string textToDisplay = dialogueData.Item1;
         bool setCheckpoint = dialogueData.Item2;
         Vector3 checkpointPosition = dialogueData.Item3;
 
-        Vector3 offScreenPosition = new Vector3(DialogueObject.transform.position.x, -600f, DialogueObject.transform.position.z);
-        DialogueObject.transform.position = offScreenPosition;
+        if(textToDisplay != "")
+        {
+            Vector3 offScreenPosition = new Vector3(DialogueObject.transform.position.x, -600f, DialogueObject.transform.position.z);
+            DialogueObject.transform.position = offScreenPosition;
 
-        // Dialogue box animation
-        DialogueObject.SetActive(true);
-        _dialogueText.text = ""; 
-        DialogueObject.transform.DOMoveY(checkpointPosition.y, 1).SetEase(Ease.InCubic).OnComplete(() => {
-            StartCoroutine(AnimateText(textToDisplay));
-        });
-        StartCoroutine(DelaydBoxClosing());
-
+            // Dialogue box animation
+            DialogueObject.SetActive(true);
+            _dialogueText.text = "";
+            DialogueObject.transform.DOMoveY(checkpointPosition.y, 1).SetEase(Ease.InCubic).OnComplete(() => {
+                StartCoroutine(AnimateText(textToDisplay));
+            });
+            StartCoroutine(DelaydBoxClosing());
+        }
+        
         if (setCheckpoint)
         {
             // I do this this way to not fire too many events, for spawnpoints to function, player must also so it's not a problem
@@ -67,5 +71,10 @@ public class DialogueHandlerScrpit : MonoBehaviour
         DialogueObject.transform.DOMoveY(-600, 1).SetEase(Ease.InCubic).OnComplete(() => {
             DialogueObject.SetActive(false);
         });
+    }
+
+    private void OnDestroy()
+    {
+        DIalogueScript.e_DialogueStart -= CreateDialogue;
     }
 }

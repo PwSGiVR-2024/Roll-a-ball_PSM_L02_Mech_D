@@ -13,27 +13,37 @@ public class MoveController : MonoBehaviour
     public float AdditionalGravity = 2;
     public GameObject Explosion;
 
-    protected Rigidbody _Rigidbody;
-    protected InputAction _MoveAction;
-    protected InputAction _JumpAction;
-    protected Vector3 _Move;
-    protected Vector3 _SpawnPoint;
+    protected Rigidbody _rigidbody;
+    protected InputAction _moveActiondy;
+    protected InputAction _jumpAction;
+    protected Vector3 _move;
+    protected Vector3 _spawnPoint;
 
     private bool _stopMoving = false;
+    private Collider _collider;
 
     protected virtual void Start()
     {
         // actions
-        _MoveAction = InputSystem.actions.FindAction("Move");
-        _JumpAction = InputSystem.actions.FindAction("Jump");
+        _moveActiondy = InputSystem.actions.FindAction("Move");
+        _jumpAction = InputSystem.actions.FindAction("Jump");
 
         // variable assigment
-        _Rigidbody = GetComponent<Rigidbody>();
+        _rigidbody = GetComponent<Rigidbody>();
 
         // events
         WallsScript.e_WallCollision += WallCollision;
         SpawnPointScript.e_SetSpawn += SetSpawnPoint;
-        _SpawnPoint = new Vector3(0, 0.5f, 0);
+        _spawnPoint = new Vector3(0, 0.5f, 0);
+
+        if (gameObject.GetComponent<BoxCollider>() != null)
+        {
+            _collider = gameObject.GetComponent<BoxCollider>();
+        }
+        else
+        {
+            _collider = gameObject.GetComponent<SphereCollider>();
+        }
     }
 
     protected virtual void OnDestroy()
@@ -49,14 +59,14 @@ public class MoveController : MonoBehaviour
         {
             return;
         }
-        _Rigidbody.AddForce(0, -AdditionalGravity, 0, ForceMode.Force);
+        _rigidbody.AddForce(0, -AdditionalGravity, 0, ForceMode.Force);
 
-        if (_MoveAction.IsPressed())
+        if (_moveActiondy.IsPressed())
         {
-            _Move = _MoveAction.ReadValue<Vector2>();
-            _Rigidbody.AddForce(_Move.x * Force * Time.deltaTime, 0, _Move.y * Force * Time.deltaTime, ForceMode.Impulse);
+            _move = _moveActiondy.ReadValue<Vector2>();
+            _rigidbody.AddForce(_move.x * Force * Time.deltaTime, 0, _move.y * Force * Time.deltaTime, ForceMode.Impulse);
         }
-        if (_JumpAction.IsPressed())
+        if (_jumpAction.IsPressed())
         {
             Jump();
         }
@@ -66,7 +76,7 @@ public class MoveController : MonoBehaviour
     {
         if (TouchesGround())
         {
-            _Rigidbody.AddForce(0, JumpForce, 0, ForceMode.Impulse);
+            _rigidbody.AddForce(0, JumpForce, 0, ForceMode.Impulse);
         }
     }
 
@@ -74,12 +84,11 @@ public class MoveController : MonoBehaviour
     {
         // make player invisible and untargetable
         gameObject.GetComponent<MeshRenderer>().enabled = false;
-        gameObject.GetComponent<BoxCollider>().enabled = false;
+        _collider.enabled = false;
 
         // make player stop moving on all vectors
         _stopMoving = true;
-        _Rigidbody.linearVelocity = Vector3.zero; 
-        _Rigidbody.angularVelocity = Vector3.zero;
+        _rigidbody.isKinematic = true;
 
         // make explosion in place of player
         Instantiate(Explosion, transform.position, Quaternion.Euler(0, 0, 0));
@@ -90,7 +99,7 @@ public class MoveController : MonoBehaviour
 
     public virtual void SetSpawnPoint(object obj, Vector3 spawnPoint)
     {
-        _SpawnPoint  = spawnPoint;
+        _spawnPoint  = spawnPoint;
     }
 
     public virtual bool TouchesGround()
@@ -104,9 +113,10 @@ public class MoveController : MonoBehaviour
     {
         yield return new WaitForSeconds(2f);
         
-        gameObject.transform.SetPositionAndRotation(_SpawnPoint, Quaternion.Euler(-90, 0, 0)); 
+        gameObject.transform.SetPositionAndRotation(_spawnPoint, Quaternion.Euler(-90, 0, 0)); 
         gameObject.GetComponent<MeshRenderer>().enabled = true;
-        gameObject.GetComponent<BoxCollider>().enabled = true;
+        _collider.enabled = true;
         _stopMoving = false;
+        _rigidbody.isKinematic = false;
     }
 }

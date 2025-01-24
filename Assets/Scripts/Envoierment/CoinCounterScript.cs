@@ -5,9 +5,9 @@ using UnityEngine.UI;
 public class CoinCounter : MonoBehaviour
 {
     public Text ScoreText;
-    public Text FinishText;
-    public AudioSource AudioSource;
+    public GameObject FinishText;
 
+    private AudioSource _audioSource;
     private bool _GameEnd;
     private int _TotalCoins;
     // Start is called before the first frame update
@@ -18,8 +18,8 @@ public class CoinCounter : MonoBehaviour
         {
             gameObject.transform.GetChild(i).gameObject.GetComponent<CoinScript>().onCoinCollection.AddListener(CountCoins);
         }
-            
-        AudioSource = GetComponent<AudioSource>();
+
+        _audioSource = GetComponent<AudioSource>();
         _TotalCoins = gameObject.transform.childCount;
         ScoreText.text = "0\\" + _TotalCoins.ToString();
     }
@@ -43,7 +43,7 @@ public class CoinCounter : MonoBehaviour
 
     public void CountCoins()
     {
-        AudioSource.Play();
+        _audioSource.Play();
         int activeCoins = 0;
         
         for (int i = 0; i < this.gameObject.transform.childCount; i++)
@@ -57,7 +57,7 @@ public class CoinCounter : MonoBehaviour
         if (activeCoins == 1)
         {
             ScoreText.text = _TotalCoins.ToString() + "\\" + _TotalCoins.ToString();
-            FinishText.gameObject.SetActive(true);
+            FinishText.SetActive(true);
             print("You collected all the coins");
             _GameEnd = true;
         }

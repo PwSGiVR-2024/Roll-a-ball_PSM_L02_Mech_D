@@ -21,6 +21,7 @@ public class DIalogueScript : MonoBehaviour
     {
         if(FireOnStartup)
         {
+            print("sent)");
             e_DialogueStart?.Invoke(this, (TextToDisplay, SetCheckpoint, transform.position));
             e_ChangeTask?.Invoke(this, TaksId);
             e_AnimationStart?.Invoke(this, AnimationId);

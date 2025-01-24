@@ -1,16 +1,16 @@
-Add better button textures
-
 burn lightmap into scene 3
 
-better ending screen
+dodać dźwięk:
+skakania
+strzelania
+- gracza tylko
+wybuchu
+- na graczu
+- na przeciwnikach
 
-dialogues on startup in scene 1 and 2
+muzyka do singletona
 
-remove checkpoint from scene 2 and the script, use empty dialoguebox as checkpoint
-
-better next level text
-
-task test more visible (maybe add a canvas sector semi-transparent black)
+jeśli skończe przed 16 to ustawiena muzyki
 
 FINAL CODE REFRACTOR
 
